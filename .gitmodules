@@ -1,0 +1,4 @@
+[submodule "apps/comicreader"]
+	path = apps/comicreader
+	url = https://github.com/OGKevin/comicreader.koplugin
+	branch = main
