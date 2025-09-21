@@ -19,4 +19,3 @@ dependency of Docusaurus). Important notes:
    the dev server
 3. Production builds and deployments are **not affected** by these
    vulnerabilities
-
