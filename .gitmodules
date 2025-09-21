@@ -2,3 +2,6 @@
 	path = apps/comicreader
 	url = https://github.com/OGKevin/comicreader.koplugin
 	branch = main
+[submodule "apps/comicmeta"]
+	path = apps/comicmeta
+	url = https://github.com/KORComic/comicmeta.koplugin
