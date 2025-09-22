@@ -18,10 +18,10 @@ Start the development server:
 npm run start
 ```
 
-This command starts a local development server at http://127.0.0.1:3000. Most changes are reflected live without having to restart the server.
+This command starts a local development server at <http://127.0.0.1:3000>. Most changes are reflected live without having to restart the server.
 
 > **Security Note**: The development server has known moderate severity vulnerabilities in its webpack-dev-server dependency. These vulnerabilities could potentially expose source code to malicious websites. For security:
-> 
+>
 > - Only use the development server in trusted environments
 
 ### Build
@@ -42,9 +42,12 @@ To preview the production build locally:
 npm run serve
 ```
 
-This starts a local server at http://127.0.0.1:3000 to serve the production build. The production build does not use webpack-dev-server and is not affected by the development server vulnerabilities.
+This starts a local server at <http://127.0.0.1:3000> to serve the production
+build. The production build does not use webpack-dev-server and is not
+affected by the development server vulnerabilities.
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+This command generates static content into the `build` directory and can be
+served using any static contents hosting service.
 
 ### Serve Built Site Locally
 
@@ -56,7 +59,7 @@ npm run serve
 
 ## 📚 Project Structure
 
-```
+```text
 docs/
 ├── apps/                      # Git submodules of individual apps
 │   └── comicreader/           # ComicReader plugin (git submodule)
@@ -77,16 +80,16 @@ docs/
 
 ## 📝 Available Scripts
 
-| Script | Description |
-|--------|-------------|
-| `npm run start` | Start development server |
-| `npm run build` | Build for production |
-| `npm run serve` | Serve production build locally |
-| `npm run clear` | Clear Docusaurus cache |
-| `npm run typecheck` | Run TypeScript type checking |
-| `npm run swizzle` | Eject/customize Docusaurus components |
-| `npm run write-translations` | Generate translation files |
-| `npm run write-heading-ids` | Add heading IDs to markdown files |
+| Script                       | Description                           |
+| ---------------------------- | ------------------------------------- |
+| `npm run start`              | Start development server              |
+| `npm run build`              | Build for production                  |
+| `npm run serve`              | Serve production build locally        |
+| `npm run clear`              | Clear Docusaurus cache                |
+| `npm run typecheck`          | Run TypeScript type checking          |
+| `npm run swizzle`            | Eject/customize Docusaurus components |
+| `npm run write-translations` | Generate translation files            |
+| `npm run write-heading-ids`  | Add heading IDs to markdown files     |
 
 ## 🚀 Deployment
 
@@ -124,6 +127,7 @@ To add new documentation for a specific app:
 3. Update the sidebar configuration in `sidebars/{APP_NAME}.ts`
 
 For example, the ComicReader documentation:
+
 - Git submodule: `apps/comicreader/`
 - Documentation files: `apps/comicreader/docs/docs/`
 - Sidebar config: `sidebars/comicreader.ts`
