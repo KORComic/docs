@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktmp_docs=self.webpackChunktmp_docs||[]).push([[2],{9414:s=>{s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"comicmeta"}')}}]);
