@@ -48,8 +48,10 @@ const config: Config = {
           id: "default",
           path: "apps/comicreader/docs",
           sidebarPath: "./sidebars/comicreader.ts",
-          editUrl:
-            "https://github.com/OGKevin/comicreader.koplugin/tree/main/docs",
+          // With the submodue setup, we can't use editUrl
+          // As the path fields above messes with the final routing
+          // tree/main/docs/apps/comicreader/docs/ which is incorrect
+          // editUrl: "https://github.com/KORComic/comicreader.koplugin/tree/main/docs",
           routeBasePath: "/comicreader.koplugin",
         },
         blog: false,
@@ -67,8 +69,12 @@ const config: Config = {
         path: "apps/comicmeta/docs",
         routeBasePath: "/comicmeta.koplugin",
         sidebarPath: "./sidebars/comicmeta.ts",
-        editUrl:
-          "https://github.com/KORComic/comicmeta.koplugin/tree/main/docs",
+        // With the submodue setup, we can't use editUrl
+        // As the path fields above messes with the final routing
+        // tree/main/docs/apps/comicmeta/docs/ which is incorrect
+        // editUrl: "https://github.com/KORComic/comicreader.koplugin/tree/main/docs",
+        // editUrl:
+        // "https://github.com/KORComic/comicmeta.koplugin/tree/main/docs",
       },
     ],
   ],
@@ -102,7 +108,7 @@ const config: Config = {
           position: "right",
         },
         {
-          href: "https://github.com/OGKevin/comicreader.koplugin",
+          href: "https://github.com/KORComic",
           label: "GitHub",
           position: "right",
         },
