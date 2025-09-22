@@ -28,6 +28,13 @@ function HomepageHeader() {
           >
             ComicReader
           </Link>
+
+          <Link
+            className="button button--secondary button--lg"
+            to="/comicmeta.koplugin/intro"
+          >
+            CoimicMeta
+          </Link>
         </div>
       </div>
     </header>

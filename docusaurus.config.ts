@@ -19,7 +19,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: "https://korcomic.github.com",
+  url: "https://korcomic.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/docs",
@@ -45,10 +45,13 @@ const config: Config = {
       "classic",
       {
         docs: {
-          path: "apps/comicreader/docs/docs",
+          id: "default",
+          path: "apps/comicreader/docs",
           sidebarPath: "./sidebars/comicreader.ts",
-          editUrl:
-            "https://github.com/OGKevin/comicreader.koplugin/tree/main/docs",
+          // With the submodue setup, we can't use editUrl
+          // As the path fields above messes with the final routing
+          // tree/main/docs/apps/comicreader/docs/ which is incorrect
+          // editUrl: "https://github.com/KORComic/comicreader.koplugin/tree/main/docs",
           routeBasePath: "/comicreader.koplugin",
         },
         blog: false,
@@ -56,6 +59,23 @@ const config: Config = {
           customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
+    ],
+  ],
+  plugins: [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "comicmeta",
+        path: "apps/comicmeta/docs",
+        routeBasePath: "/comicmeta.koplugin",
+        sidebarPath: "./sidebars/comicmeta.ts",
+        // With the submodue setup, we can't use editUrl
+        // As the path fields above messes with the final routing
+        // tree/main/docs/apps/comicmeta/docs/ which is incorrect
+        // editUrl: "https://github.com/KORComic/comicreader.koplugin/tree/main/docs",
+        // editUrl:
+        // "https://github.com/KORComic/comicmeta.koplugin/tree/main/docs",
+      },
     ],
   ],
 
@@ -72,15 +92,23 @@ const config: Config = {
         {
           type: "docSidebar",
           sidebarId: "comicReader",
+          docsPluginId: "default",
           position: "left",
           label: "ComicReader",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "comicMeta",
+          docsPluginId: "comicmeta",
+          position: "left",
+          label: "ComicMeta",
         },
         {
           type: "docsVersionDropdown",
           position: "right",
         },
         {
-          href: "https://github.com/OGKevin/comicreader.koplugin",
+          href: "https://github.com/KORComic",
           label: "GitHub",
           position: "right",
         },
