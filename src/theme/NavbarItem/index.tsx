@@ -8,6 +8,7 @@ import type { WrapperProps } from "@docusaurus/types";
 import ContextualVersionDropdown from "@site/src/components/ContextualVersionDropdown";
 import SidebarDropdownNavbarItem from "@site/src/components/SidebarDropdownNavbarItem";
 
+// @ts-ignore
 type Props = WrapperProps<typeof NavbarItemType>;
 
 export default function NavbarItemWrapper(

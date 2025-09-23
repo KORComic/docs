@@ -47,6 +47,7 @@ jobs:
             prettier:
               - '**/*.js'
               - '**/*.ts'
+              - '**/*.tsx'
               - '**/*.json'
               - '**/*.md'
             nix:
