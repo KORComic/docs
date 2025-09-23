@@ -14,7 +14,7 @@ function HomepageHeader() {
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
-        {/* @ts-ignore */}
+        {/* @ts-ignore  Docusaurus returns ReactNode, which can't be used in ReactElement, so it breaks type checking*/}
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
@@ -23,7 +23,7 @@ function HomepageHeader() {
         <img width="700" src={CombinedImage} />
 
         <div className={styles.buttons}>
-          {/* @ts-ignore */}
+          {/* @ts-ignore  Docusaurus returns ReactNode, which can't be used in ReactElement, so it breaks type checking*/}
           <Link
             className="button button--secondary button--lg"
             to="/comicreader.koplugin/intro"
@@ -31,7 +31,7 @@ function HomepageHeader() {
             ComicReader
           </Link>
 
-          {/* @ts-ignore */}
+          {/* @ts-ignore  Docusaurus returns ReactNode, which can't be used in ReactElement, so it breaks type checking*/}
           <Link
             className="button button--secondary button--lg"
             to="/comicmeta.koplugin/intro"
