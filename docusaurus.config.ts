@@ -45,7 +45,7 @@ const config: Config = {
       "classic",
       {
         docs: {
-          id: "default",
+          id: "comicreader",
           path: "apps/comicreader/docs",
           sidebarPath: "./sidebars/comicreader.ts",
           // With the submodue setup, we can't use editUrl
@@ -53,6 +53,11 @@ const config: Config = {
           // tree/main/docs/apps/comicreader/docs/ which is incorrect
           // editUrl: "https://github.com/KORComic/comicreader.koplugin/tree/main/docs",
           routeBasePath: "/comicreader.koplugin",
+          // NOTE: This should be set to current when the docs on main branch is referring to the latest released version
+          lastVersion: "current",
+          versions: {
+            current: { label: "latest" },
+          },
         },
         blog: false,
         theme: {
@@ -69,6 +74,13 @@ const config: Config = {
         path: "apps/comicmeta/docs",
         routeBasePath: "/comicmeta.koplugin",
         sidebarPath: "./sidebars/comicmeta.ts",
+        // NOTE: This should be set to current when the docs on main branch is referring to the latest released version.
+        // When this is done, remember to comment out the versions field below
+        // lastVersion: "current",
+        // versions: {
+        //   current: { label: "latest" },
+        // },
+
         // With the submodue setup, we can't use editUrl
         // As the path fields above messes with the final routing
         // tree/main/docs/apps/comicmeta/docs/ which is incorrect
@@ -90,21 +102,25 @@ const config: Config = {
       },
       items: [
         {
-          type: "docSidebar",
-          sidebarId: "comicReader",
-          docsPluginId: "default",
+          type: "custom-sidebarDropdownNavbarItem",
           position: "left",
-          label: "ComicReader",
+          items: [
+            {
+              label: "ComicReader",
+              pluginId: "comicreader",
+              sidebarId: "comicReader",
+              routeBasePath: "/comicreader.koplugin",
+            },
+            {
+              label: "ComicMeta",
+              pluginId: "comicmeta",
+              sidebarId: "comicMeta",
+              routeBasePath: "/comicmeta.koplugin",
+            },
+          ],
         },
         {
-          type: "docSidebar",
-          sidebarId: "comicMeta",
-          docsPluginId: "comicmeta",
-          position: "left",
-          label: "ComicMeta",
-        },
-        {
-          type: "docsVersionDropdown",
+          type: "custom-contextualVersionDropdown",
           position: "right",
         },
         {
