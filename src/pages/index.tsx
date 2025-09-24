@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -14,6 +14,7 @@ function HomepageHeader() {
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
+        {/* @ts-ignore  Docusaurus returns ReactNode, which can't be used in ReactElement, so it breaks type checking*/}
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
@@ -22,6 +23,7 @@ function HomepageHeader() {
         <img width="700" src={CombinedImage} />
 
         <div className={styles.buttons}>
+          {/* @ts-ignore  Docusaurus returns ReactNode, which can't be used in ReactElement, so it breaks type checking*/}
           <Link
             className="button button--secondary button--lg"
             to="/comicreader.koplugin/intro"
@@ -29,6 +31,7 @@ function HomepageHeader() {
             ComicReader
           </Link>
 
+          {/* @ts-ignore  Docusaurus returns ReactNode, which can't be used in ReactElement, so it breaks type checking*/}
           <Link
             className="button button--secondary button--lg"
             to="/comicmeta.koplugin/intro"
@@ -44,6 +47,7 @@ function HomepageHeader() {
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
+    // @ts-ignore Docusaurus returns ReactNode, which can't be used in ReactElement, so it breaks type checking
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"

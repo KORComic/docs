@@ -1,3 +1,4 @@
+import React from "react";
 import type { ReactNode } from "react";
 import clsx from "clsx";
 import Heading from "@theme/Heading";
@@ -49,6 +50,7 @@ function Feature({ title, Svg, description }: FeatureItem) {
         <Svg className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
+        {/* @ts-ignore  Docusaurus returns ReactNode, which can't be used in ReactElement, so it breaks type checking*/}
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
       </div>
