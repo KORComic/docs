@@ -30,7 +30,7 @@ jobs:
       actions: ${{ steps.changes.outputs.actions }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - uses: dorny/paths-filter@v3
         id: changes
         with:
@@ -60,7 +60,7 @@ jobs:
     if: ${{ needs.changes.outputs.lua == 'true' }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - uses: JohnnyMorganz/stylua-action@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -73,7 +73,7 @@ jobs:
     if: ${{ needs.changes.outputs.yaml == 'true' }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: "Yamllint"
         uses: karancode/yamllint-github-action@master
         with:
@@ -87,7 +87,7 @@ jobs:
     if: ${{ needs.changes.outputs.prettier == 'true' }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Prettify code
         uses: creyD/prettier_action@v4.6
         with:
@@ -99,7 +99,7 @@ jobs:
     if: ${{ needs.changes.outputs.nix == 'true' }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - uses: cachix/install-nix-action@v31
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
@@ -116,7 +116,7 @@ jobs:
     if: ${{ needs.changes.outputs.shell == 'true' }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Install shfmt
         run: |
           sudo apt-get update && sudo apt-get install -y shfmt
@@ -129,7 +129,7 @@ jobs:
     if: ${{ needs.changes.outputs.markdown == 'true' }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Install markdownlint-cli
         run: |
           npm install -g markdownlint-cli
@@ -142,7 +142,7 @@ jobs:
     if: ${{ needs.changes.outputs.shell == 'true' }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Install shellcheck
         run: |
           sudo apt-get update && sudo apt-get install -y shellcheck
@@ -155,6 +155,6 @@ jobs:
     if: ${{ needs.changes.outputs.actions == 'true' }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: actionlint
         uses: raven-actions/actionlint@v2
