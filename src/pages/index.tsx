@@ -36,7 +36,7 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/comicmeta.koplugin/intro"
           >
-            CoimicMeta
+            ComicMeta
           </Link>
         </div>
       </div>
